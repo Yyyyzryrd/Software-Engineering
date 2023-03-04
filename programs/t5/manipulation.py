@@ -1,0 +1,6 @@
+str_matnip = input ("Enter a sentence: ")
+print (f"This sentence is {len(str_matnip)} characters long")
+print (str_matnip.replace (str_matnip[-1], "@"))
+print (str_matnip [:-4:-1])
+print (str_matnip[:3] + str_matnip[-2:])
+print (str_matnip.replace (" ", "\n"))
