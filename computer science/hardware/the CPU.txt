@@ -1,0 +1,77 @@
+the CPU (central processing unit) is the main "brain" of a computer. components from which it's made from include:
+- control unit (CU)
+- buses
+- arithmetic logic unit (ALU)
+- registers
+
+
+
+-- Control Unit --
+co-ordinates what the CPU does, dictating where data is pushed to and pulled from. 
+it gets an instruction, decodes what needs to be done into a list, executes it, and sends the data into memory/registers
+
+
+-- Buses --
+wires connecting hardware. typically 6/16/32/64 lines. 
+the CPU is connected to main memory with three buses (known as the system bus). only one device can use a bus at a time. 
+upon accessing data, the address goes to the address bus. 
+the data goes to the CPU via the data bus. 
+control signals use the contol bus. 
+
+== Control Bus
+-bi-directional
+-transmit commands, timing and status between components. 
+
+controls include:
+- Bus Request = indicates request of data
+- Bus Grant = indicates data access granted
+- Memory Write = writes data to address
+- Memory Read = reads data addressed
+- Interrupt Request = indicates request to CPU
+- Clock = synchronises operations
+
+== Data Bus
+-bi-directional for data flow between hardware
+-typically 8/16/32/64 lines
+
+== Address Bus
+memory is divided into words (typically 16/32/64 bits, depends on process). words are handled as one unit by a processor. words have their own addresses, this bus sends out the addresses elsewhere. 
+
+
+-- Arithmetic Logic Unit --
+mathematical/logical operations. basic math, shifting bits right/left, boolean logic, comparing two values, AND/OR/NOT/XOR. 
+
+-- Registers --
+special memory cells, very quick. all arithmetic/logicl/shift operations. 
+despite having around 16 registers, some CPUs have only one accumulator which takes place of general registers. 
+
+other registers include:
+- Program Counter = holds address of next instruction, incrimented after instruction is fetched
+- Current Instruction Register = holds currently executed instruction (divided into operand and opcode)
+- Memory Address Register = holds address of data read/written to/from data
+- Memory Data/Buffer Register = temporarily store data read/written to/from memory. 
+- Current Instruction Register = temporarily holds current instruction, facilitates execution
+
+the difference between the PC and MAR is that the PC tracks the address for the next instruction, the MAR holds addresses for data being *written to or read from*
+
+
+-- Fetch-Decode-Execute cycle --
+
+Key Terms: 
+[opcode - used to determine type of instruction, which hardware to execute it
+operand - address of data for operation, copied to MAR /// data, copied to MDR /// data, copied to ALU/ACC
+
+in "ADD A, B" A and B are operands, ADD is opcode]
+
+when something is executed, it's typically done in the FDE cycle. 
+
+== Fetching
+1. the PC gets the address of the next instruction, copies to the MAR
+2. instruction from that address copied into MDR. PC increments
+3. MDR contents copied to CIR
+
+== Decoding
+- instruction in CIR is decoded into opcode and operand
+
+= Executing
+- opcode works on operand
