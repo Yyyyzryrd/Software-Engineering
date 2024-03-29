@@ -75,3 +75,21 @@ when something is executed, it's typically done in the FDE cycle.
 
 = Executing
 - opcode works on operand
+
+
+
+
+
+-= Processor Performance =-
+main factors are:
+
+= Clock Speed
+every CPU operation happens during the switch from 0/1 or 1/0. this is the limiting factor in how quickly an operation can be done, although things can take multiple cycles to complete. 1 Hz is one cycle per second. 1 GHz is 1 billion cycles per second. 
+
+-number of cores
+
+
+
+-cache memory speed/size
+
+
